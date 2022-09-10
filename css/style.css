@@ -11,6 +11,7 @@
     --card-border-color:#EEEEEE;
     --hero-bg-overlay:rgba(47, 48, 58, 0.4);
     --hero-bg-color:#C4C4C4;
+    --icon-color:#AFB1B8;
 
     --main-font-family:Roboto, sans-serif;
     --second-font-family:Raleway, sans-serif;
@@ -105,7 +106,7 @@ body{
     justify-content: space-between;
 }
 .social-link-icon{
-    fill: #afb1b8;
+    fill: var(--icon-color);
 }
 
 /*header*/
@@ -150,13 +151,18 @@ body{
 .address{
     color:var(--main-text-color);
 }
-.address:hover,.address:focus{
+.address:hover,
+.address:focus{
     color:var(--accent-color);
 }
 .link.nav, .link.address{
     font-weight: 500;
     line-height: 1.14;
     letter-spacing: 0.02em;
+}
+.icon-address{
+    fill: currentColor;
+    margin-right: 10px;
 }
 /*main*/
 .hero{
@@ -168,6 +174,9 @@ body{
         url(../images/bg.jpg);   
     background-color: var(--hero-bg-color);
     background-size: cover;
+    max-width: 1600px;
+    margin-right: auto;
+    margin-left: auto;
 }
 .hero-title{
     font-weight: 900;
@@ -260,6 +269,8 @@ body{
 }
 .team-list{
     flex-basis: calc((100%-90px)/4);
+    box-shadow: 0 4px 2px -2px var(--icon-color);
+    border-radius: 2%;
 }
 .team-list:not(:last-child){
     margin-right: 30px;
@@ -285,7 +296,18 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #AFB1B8;
+    border: 1px solid var(--icon-color);
+}
+.client-link:hover,
+.client-link-focus{
+    border: 1px solid var(--accent-color);
+}
+.client-link:hover .client-icon,
+.client-link-focus .client-icon{
+    fill: var(--accent-color);
+}
+.client-icon{
+    fill:var(--icon-color);
 }
 /*footer*/
 .footer{
@@ -316,6 +338,9 @@ body{
 .footer-social{
     width: 206px;
 }
+.footer-social > .social-list{
+    margin-bottom: 23px;
+}
 .footer-title{
     color:var(--white-color);
     margin-bottom: 20px;
@@ -345,6 +370,7 @@ body{
 .filter:hover, .filter:focus{
     background-color: var(--accent-color);
     color:var(--white-color);
+    box-shadow: 0 2px 1px 1px;
 }
 .filter.active{
     background-color: var(--accent-color);
@@ -355,7 +381,10 @@ body{
     gap:30px;
 }
 .portfolio-list{
-    flex-basis: calc((100% - 60px) / 3);
+    flex-basis: calc((100% - 60px) / 3); 
+}
+.portfolio-list:hover{    
+    box-shadow: 1px 3px 4px 1px var(--icon-color);   
 }
 .footer-card{
     border:1px solid var(--card-border-color);
